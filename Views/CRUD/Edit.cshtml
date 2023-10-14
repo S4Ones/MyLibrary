@@ -1,0 +1,43 @@
+﻿@model MyLibrary.Models.Book
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<form asp-action="edit" asp-controller="CRUD" method="post" asp-route-id="@Model.Id">
+    <p>
+        <label asp-for="Title">Название книги</label><br />
+        <input type="text" asp-for="Title" />
+    </p>
+    <p>
+        <label asp-for="Author">Автор</label><br />
+        <input type="text" asp-for="Author" />
+    </p>
+    <p>
+        <label asp-for="Genre">Номер жанра</label><br />
+        <input type="value" asp-for="Genre" />
+    </p>
+    <p>
+        <label asp-for="YearPublishing">Год публикации</label><br />
+        <input type="text" asp-for="YearPublishing" />
+    </p>
+    <p>
+        <label asp-for="PublishingHouse">Издание</label><br />
+        <input type="text" asp-for="PublishingHouse" />
+    </p>
+    <p>
+        <label asp-for="Description">Описание</label><br />
+        <input type="text" asp-for="Description" />
+    </p>
+    <p>
+        <label asp-for="Image">Изображение</label><br />
+        <input type="text" asp-for="Image" />
+    </p>
+    <p>
+        <label asp-for="UrlBook">Ссылка на прочтение книги</label><br />
+        <input type="text" asp-for="UrlBook" />
+    </p>
+    <p><input type="submit" value="Сохранить" /></p>
+</form>
+

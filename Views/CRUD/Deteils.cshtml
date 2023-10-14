@@ -1,0 +1,65 @@
+﻿@model MyLibrary.Models.Book
+@{
+    ViewData["Title"] = Model.Title;
+}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Книга</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+
+        .book-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .book-image {
+            max-width: 100%;
+            margin-bottom: 20px;
+        }
+
+        .book-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .book-details {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .read-link {
+            display: block;
+            font-size: 18px;
+            text-decoration: none;
+            color: #007bff;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>  
+    <div class="book-container">
+        <img src="@Model.Image" alt="@Model.Title" width="200" height="300" class="book-image">
+        <div class="book-title">@Model.Title</div>
+        <div class="book-details">
+            <p><strong>Жанр:</strong> @Model.Genre.NameGanre</p>
+            <p><strong>Описание:</strong> @Model.Description</p>
+            <p><strong>Год издания:</strong> @Model.YearPublishing г.</p>
+            <p><strong>Издательство:</strong> @Model.PublishingHouse</p>
+        </div>
+        <a href="@Url.Action("OpenPdfFromDb", "CRUD", new { filePath = Model.UrlBook })" target="_blank" class="read-link">Прочитать книгу</a>
+        <a class="read-link" asp-controller="Review" asp-action="ShowReview" asp-route-id="@Model.Id">Отзывы и оценка</a>
+    </div>
+</body>

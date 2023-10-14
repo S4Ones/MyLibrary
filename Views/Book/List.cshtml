@@ -1,0 +1,54 @@
+﻿<style>
+    .genre-list {
+        list-style: none;
+        padding: 0;
+    }
+
+    .genre-item {
+        display: inline;
+        margin-right: 20px;
+    }
+
+    a {
+        text-decoration: none;
+        color: black;
+    }
+
+</style>
+
+<div class="genres" align="center">
+    <ul class="genre-list">
+        <a href="/Book/List/Fantasy" class="nav-link>
+        <li class="genre-item">Фэнтези &nbsp</li>
+        </a>
+        <a href="/Book/List/Detectives" class="nav-link>
+        <li class="genre-item">Детективы &nbsp</li>
+        </a>
+        <a href="/Book/List/Horror" class="nav-link>
+        <li class="genre-item">Ужасы &nbsp</li>
+        </a>
+        <a href="/Book/List/Adventures" class="nav-link>
+        <li class="genre-item">Приключения &nbsp</li>
+        </a>
+        <a href="/Book/List/Fantastic" class="nav-link>
+        <li class="genre-item">Фантастика &nbsp</li>
+        </a>
+        <a href="/Book/List/Novel" class="nav-link>
+        <li class="genre-item">Роман &nbsp</li>
+        </a>
+        <a href="/Book/List/Prose" class="nav-link>
+        <li class="genre-item">Проза</li>
+        </a>
+    </ul>
+</div>
+
+<h3 align="center">@Model.currGenre</h3>
+
+<div class="row mt-5 mb-2">
+    @{
+        foreach (Book book in Model.allBooks)
+        {
+            @Html.Partial("AllBookPage", book)
+        }
+    }
+</div>

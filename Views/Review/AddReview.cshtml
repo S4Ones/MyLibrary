@@ -1,0 +1,19 @@
+﻿@model Review
+@{
+    ViewData["Title"] = "AddReview";
+}
+
+<h2>Добавить отзыв</h2>
+<form asp-controller="Review" asp-action="AddReview" method="post">
+    <label asp-for="UserId">Ваше email:</label><br>
+    <input type="text" asp-for="UserId" value="@ViewBag.User.Email" readonly /><br>
+
+    <label asp-for="BookId">Номер книги:</label><br>
+    <input type="text" asp-for="BookId" value="@ViewBag.Book.id" readonly /><br>
+
+    <label asp-for="Comment">Отзыв:</label><br>
+    <textarea asp-for="Comment" rows="4" cols="50" required></textarea><br>
+
+    <input type="submit" value="Оставить отзыв">
+</form>
+

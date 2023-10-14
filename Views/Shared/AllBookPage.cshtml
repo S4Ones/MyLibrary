@@ -1,0 +1,6 @@
+﻿@model Book
+<div class="col-lg-4" align="center">
+    <a asp-action="Deteils" asp-controller="CRUD" asp-route-id="@Model.Id"><img class="img-thumbnail" width="200" height="300" src="@Model.Image" alt="@Model.Title" /></a>
+    <h4 align="center">@Model.Title</h4>
+    <p><a class="btn btn-warning" asp-controller="UserBook" asp-action="AddToUserBook" asp-route-id="@Model.Id">Добавить в мою библиотеку</a></p>
+</div>

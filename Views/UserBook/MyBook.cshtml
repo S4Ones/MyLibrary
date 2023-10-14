@@ -1,0 +1,16 @@
+﻿@model List<MyLibrary.Models.UserBook>
+@{
+    ViewData["Title"] = "MyBook";
+}
+
+
+<h3 align="center">Мои книги</h3>
+<div class="row mt-5 mb-2">
+    @foreach (var userBook in Model)
+    {
+        <div class="col-lg-4" align="center">
+            <a asp-action="Deteils" asp-controller="CRUD" asp-route-id="@userBook.Book.Id"><img class="img-thumbnail" width="200" height="300" src="@userBook.Book.Image" alt="@userBook.Book.Title" /></a>
+            <h4 align="center">@userBook.Book.Title</h4>
+        </div>
+    }
+</div>

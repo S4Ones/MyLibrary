@@ -1,0 +1,16 @@
+﻿@model List<MyLibrary.Models.Review>
+@{
+    ViewData["Title"] = "ShowReview";
+}
+
+<h3 align="center">Отзывы по книге @ViewBag.Book.Title</h3>
+
+@foreach(var reviewItem in Model)
+{
+    <div class="review">
+        <h4>@reviewItem.UserId</h4>
+        <p>@reviewItem.Comment</p>
+    </div>
+}
+
+<a asp-area="" asp-controller="Review" asp-action="AddReview" asp-route-id="@ViewBag.Book.Id">Добавить отзыв</a>

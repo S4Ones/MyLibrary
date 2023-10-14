@@ -1,0 +1,23 @@
+﻿@model MyLibrary.Models.Book
+@{
+    ViewData["Title"] = "Crud";
+}
+
+<h1>Crud</h1>
+<table class="table">
+    <tr>
+        <th>Номер книги</th>
+        <th>Название книги</th>
+    </tr>
+    @foreach (var item in ViewBag.Books)
+    {
+        <tr>
+            <td>@item.Id</td>
+            <td>@item.Title</td>
+            <td><a asp-action="Edit" asp-controller="CRUD" asp-route-id="@item.Id">Изменить</a></td>
+            <td><a asp-action="Delete" asp-controller="CRUD" asp-route-id="@item.Id">Удалить</a></td>
+        </tr>
+    }
+</table>
+<a asp-area="" asp-controller="CRUD" asp-action="Create">Добавить книгу</a>
+
